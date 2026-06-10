@@ -79,7 +79,7 @@ export default function TechStack() {
         <div className="text-center mb-14">
           <p className="text-xs uppercase tracking-widest text-[#3b82f6] font-medium mb-4">Supported runtimes</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">Built for your stack</h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto">Starting with .NET, expanding rapidly. More runtimes are on the roadmap.</p>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">Starting with .NET, expanding rapidly. More runtimes are on the roadmap.</p>
         </div>
 
         {/* Cards */}
@@ -90,7 +90,7 @@ export default function TechStack() {
         </div>
 
         {/* More coming note */}
-        <p className="text-center text-[#334155] text-sm mt-10">
+        <p className="text-center text-slate-400 text-sm mt-10">
           Go, Rust, Ruby on Rails, and more are planned.{' '}
           <a href="#" className="text-[#3b82f6] hover:text-[#60a5fa] underline underline-offset-2 transition-colors">
             View the roadmap →
@@ -117,8 +117,8 @@ function TechCard({ name, badge, badgeColor, icon, description }: { name: string
         </span>
       </div>
       <div>
-        <h3 className="text-white font-semibold mb-1.5">{name}</h3>
-        <p className="text-[#64748b] text-sm leading-relaxed">{description}</p>
+        <h3 className="text-slate-900 font-semibold mb-1.5">{name}</h3>
+        <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   );

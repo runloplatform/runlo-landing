@@ -86,7 +86,7 @@ export default function Pricing() {
         <div className="text-center mb-14">
           <p className="text-xs uppercase tracking-widest text-[#3b82f6] font-medium mb-4">Simple pricing</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-5">Transparent, predictable</h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto leading-relaxed">No hidden fees. No per-seat surprises. Start free and upgrade when you&apos;re ready.</p>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">No hidden fees. No per-seat surprises. Start free and upgrade when you&apos;re ready.</p>
         </div>
 
         {/* Cards */}
@@ -97,7 +97,7 @@ export default function Pricing() {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-[#334155] text-sm mt-10">All plans include automatic SSL, deployment logs, and uptime monitoring.</p>
+        <p className="text-center text-slate-400 text-sm mt-10">All plans include automatic SSL, deployment logs, and uptime monitoring.</p>
       </div>
     </section>
   );
@@ -112,13 +112,14 @@ function PricingCard({ plan }: { plan: (typeof PLANS)[number] }) {
       style={
         highlighted
           ? {
-              background: 'rgba(10,22,40,0.95)',
-              border: '1px solid rgba(99,102,241,0.4)',
-              boxShadow: '0 0 80px rgba(59,130,246,0.12), 0 24px 60px rgba(0,0,0,0.3)'
+              background: 'linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%)',
+              border: '1px solid rgba(99,102,241,0.3)',
+              boxShadow: '0 0 40px rgba(59,130,246,0.1), 0 8px 32px rgba(0,0,0,0.06)'
             }
           : {
-              background: 'rgba(255,255,255,0.025)',
-              border: '1px solid rgba(255,255,255,0.07)'
+              background: '#ffffff',
+              border: '1px solid rgba(0,0,0,0.07)',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.05)'
             }
       }>
       {/* Top gradient line for highlighted */}
@@ -135,15 +136,15 @@ function PricingCard({ plan }: { plan: (typeof PLANS)[number] }) {
 
       {/* Plan name & tag */}
       <div className="mb-6">
-        <h3 className="text-white font-semibold text-xl mb-1">{name}</h3>
-        <p className="text-[#64748b] text-sm">{tagline}</p>
+        <h3 className="text-slate-900 font-semibold text-xl mb-1">{name}</h3>
+        <p className="text-slate-500 text-sm">{tagline}</p>
       </div>
 
       {/* Price */}
       <div className="mb-8">
         <div className="flex items-end gap-1">
-          <span className="text-5xl font-bold text-white">{price}</span>
-          {period && <span className="text-[#64748b] text-sm mb-2">{period}</span>}
+          <span className="text-5xl font-bold text-slate-900">{price}</span>
+          {period && <span className="text-slate-500 text-sm mb-2">{period}</span>}
         </div>
       </div>
 
@@ -162,7 +163,7 @@ function PricingCard({ plan }: { plan: (typeof PLANS)[number] }) {
             <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(34,197,94,0.12)' }}>
               <CheckIcon />
             </span>
-            <span className="text-[#94a3b8] text-sm">{feature}</span>
+            <span className="text-slate-600 text-sm">{feature}</span>
           </li>
         ))}
       </ul>

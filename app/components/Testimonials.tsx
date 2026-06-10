@@ -73,7 +73,7 @@ export default function Testimonials() {
         <div className="text-center mb-14">
           <p className="text-xs uppercase tracking-widest text-[#3b82f6] font-medium mb-4">Trusted by developers</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">Developers love Runlo</h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto">Join hundreds of developers who ship faster with Runlo every day.</p>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">Join hundreds of developers who ship faster with Runlo every day.</p>
         </div>
 
         {/* Cards */}
@@ -103,7 +103,7 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof TESTIMONIALS)[n
       </div>
 
       {/* Quote text */}
-      <p className="text-[#94a3b8] text-sm leading-relaxed flex-1">&ldquo;{quote}&rdquo;</p>
+      <p className="text-slate-600 text-sm leading-relaxed flex-1">&ldquo;{quote}&rdquo;</p>
 
       {/* Divider */}
       <div className="section-divider" />
@@ -116,8 +116,8 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof TESTIMONIALS)[n
           {avatar}
         </div>
         <div>
-          <p className="text-white text-sm font-medium">{name}</p>
-          <p className="text-[#475569] text-xs">
+          <p className="text-slate-900 text-sm font-medium">{name}</p>
+          <p className="text-slate-400 text-xs">
             {role} · {company}
           </p>
         </div>

@@ -69,7 +69,7 @@ export default function HowItWorks() {
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-widest text-[#3b82f6] font-medium mb-4">Simple process</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-5">Deploy in 4 steps</h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto leading-relaxed">From zero to production in minutes. No DevOps knowledge required.</p>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">From zero to production in minutes. No DevOps knowledge required.</p>
         </div>
 
         {/* Steps — desktop: horizontal, mobile: vertical */}
@@ -113,8 +113,8 @@ function StepCard({ number, icon, title, description, color, isLast }: { number:
       {/* Arrow (between steps, mobile vertical connector) */}
       {!isLast && <div className="lg:hidden w-px h-8 mb-2" style={{ background: `linear-gradient(180deg, ${color}60, transparent)` }} />}
 
-      <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
-      <p className="text-[#64748b] text-sm leading-relaxed max-w-xs">{description}</p>
+      <h3 className="text-slate-900 font-semibold text-lg mb-2">{title}</h3>
+      <p className="text-slate-500 text-sm leading-relaxed max-w-xs">{description}</p>
     </div>
   );
 }

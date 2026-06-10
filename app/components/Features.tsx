@@ -88,7 +88,7 @@ export default function Features() {
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-widest text-[#3b82f6] font-medium mb-4">Everything you need</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-5">Built for modern teams</h2>
-          <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
             From code to production in minutes. Runlo handles the entire deployment lifecycle so you can focus on shipping features.
           </p>
         </div>
@@ -112,8 +112,8 @@ function FeatureCard({ icon, color, title, description, delay }: { icon: React.R
         {icon}
       </div>
 
-      <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
-      <p className="text-[#64748b] text-sm leading-relaxed">{description}</p>
+      <h3 className="text-slate-900 font-semibold text-lg mb-2">{title}</h3>
+      <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
 
       {/* Bottom accent line */}
       <div className="mt-5 h-px" style={{ background: `linear-gradient(90deg, ${color}30, transparent)` }} />

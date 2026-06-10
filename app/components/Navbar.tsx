@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[rgba(5,13,26,0.92)] border-b border-[rgba(255,255,255,0.07)] backdrop-blur-xl' : 'bg-transparent'}`}>
+      className='fixed top-0 left-0 right-0 z-50 bg-[rgba(248,250,252,0.95)] border-b border-[rgba(0,0,0,0.07)] backdrop-blur-xl shadow-sm'>
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* ── Logo ── */}
         <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
@@ -31,13 +31,13 @@ export default function Navbar() {
               <path d="M8 2L14 13H2L8 2Z" fill="white" fillOpacity="0.9" />
             </svg>
           </div>
-          <span className="text-white font-semibold text-lg tracking-tight">Runlo</span>
+          <span className="text-slate-900 font-semibold text-lg tracking-tight">Runlo</span>
         </Link>
 
         {/* ── Desktop nav ── */}
         <nav className="hidden md:flex items-center gap-7">
           {NAV_LINKS.map(({ label, href }) => (
-            <a key={label} href={href} className="text-[#94a3b8] hover:text-white text-sm font-medium transition-colors duration-200">
+            <a key={label} href={href} className="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors duration-200">
               {label}
             </a>
           ))}
@@ -45,7 +45,7 @@ export default function Navbar() {
 
         {/* ── Desktop CTA ── */}
         <div className="hidden md:flex items-center gap-4">
-          <a href="#" className="text-[#94a3b8] hover:text-white text-sm font-medium transition-colors duration-200">
+          <a href="#" className="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors duration-200">
             Sign in
           </a>
           <a href="#" className="btn-primary px-5 py-2 text-sm">
@@ -57,7 +57,7 @@ export default function Navbar() {
         </div>
 
         {/* ── Mobile hamburger ── */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-[#94a3b8] hover:text-white p-1.5 transition-colors" aria-label={menuOpen ? 'Close menu' : 'Open menu'}>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-slate-500 hover:text-slate-900 p-1.5 transition-colors" aria-label={menuOpen ? 'Close menu' : 'Open menu'}>
           {menuOpen ? (
             <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
               <path
@@ -80,15 +80,15 @@ export default function Navbar() {
 
       {/* ── Mobile menu ── */}
       {menuOpen && (
-        <div className="md:hidden border-b border-[rgba(255,255,255,0.07)] bg-[rgba(5,13,26,0.97)] backdrop-blur-xl animate-slide-down">
+        <div className="md:hidden border-b border-[rgba(0,0,0,0.07)] bg-[rgba(248,250,252,0.97)] backdrop-blur-xl animate-slide-down">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
             {NAV_LINKS.map(({ label, href }) => (
-              <a key={label} href={href} onClick={() => setMenuOpen(false)} className="text-[#94a3b8] hover:text-white text-sm font-medium transition-colors py-1">
+              <a key={label} href={href} onClick={() => setMenuOpen(false)} className="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors py-1">
                 {label}
               </a>
             ))}
-            <div className="pt-3 border-t border-[rgba(255,255,255,0.07)] flex flex-col gap-2">
-              <a href="#" className="text-[#94a3b8] hover:text-white text-sm font-medium transition-colors py-1">
+            <div className="pt-3 border-t border-[rgba(0,0,0,0.07)] flex flex-col gap-2">
+              <a href="#" className="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors py-1">
                 Sign in
               </a>
               <a href="#" className="btn-primary px-5 py-2.5 text-sm text-center">

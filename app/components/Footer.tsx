@@ -29,7 +29,7 @@ const FOOTER_LINKS = {
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-[rgba(255,255,255,0.06)] mt-0">
+    <footer className="relative border-t border-[rgba(0,0,0,0.07)] mt-0 bg-[#f1f5f9]">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Top row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-14">
@@ -41,9 +41,9 @@ export default function Footer() {
                   <path d="M8 2L14 13H2L8 2Z" fill="white" fillOpacity="0.9" />
                 </svg>
               </div>
-              <span className="text-white font-semibold text-base tracking-tight">Runlo</span>
+              <span className="text-slate-900 font-semibold text-base tracking-tight">Runlo</span>
             </a>
-            <p className="text-[#475569] text-sm leading-relaxed mb-6">Deploy your apps in minutes.</p>
+            <p className="text-slate-500 text-sm leading-relaxed mb-6">Deploy your apps in minutes.</p>
             {/* Social links */}
             <div className="flex items-center gap-3">
               <SocialLink href="#" label="GitHub">
@@ -67,11 +67,11 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([section, links]) => (
             <div key={section}>
-              <h4 className="text-white text-sm font-semibold mb-4">{section}</h4>
+              <h4 className="text-slate-900 text-sm font-semibold mb-4">{section}</h4>
               <ul className="space-y-2.5">
                 {links.map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} className="text-[#475569] hover:text-[#94a3b8] text-sm transition-colors duration-200">
+                    <a href={href} className="text-slate-500 hover:text-slate-900 text-sm transition-colors duration-200">
                       {label}
                     </a>
                   </li>
@@ -82,9 +82,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <p className="text-[#334155] text-xs">© {new Date().getFullYear()} Runlo, Inc. All rights reserved.</p>
-          <p className="text-[#2d3e55] text-xs">Built with ☕ for developers who ship.</p>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+          <p className="text-slate-400 text-xs">© {new Date().getFullYear()} Runlo, Inc. All rights reserved.</p>
+          <p className="text-slate-300 text-xs">Built with ☕ for developers who ship.</p>
         </div>
       </div>
     </footer>
@@ -96,8 +96,8 @@ function SocialLink({ href, label, children }: { href: string; label: string; ch
     <a
       href={href}
       aria-label={label}
-      className="w-8 h-8 rounded-lg flex items-center justify-center text-[#334155] hover:text-[#94a3b8] transition-colors"
-      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+      className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-700 transition-colors"
+      style={{ background: 'rgba(0,0,0,0.04)', border: '1px solid rgba(0,0,0,0.08)' }}>
       {children}
     </a>
   );

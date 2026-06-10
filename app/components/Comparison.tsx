@@ -40,7 +40,7 @@ export default function Comparison() {
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-widest text-[#3b82f6] font-medium mb-4">Why Runlo</p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text mb-5">Traditional hosting vs. Runlo</h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto leading-relaxed">Stop spending days on DevOps. Ship features instead.</p>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">Stop spending days on DevOps. Ship features instead.</p>
         </div>
 
         {/* Comparison grid */}
@@ -49,8 +49,9 @@ export default function Comparison() {
           <div
             className="rounded-2xl p-8"
             style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.06)'
+              background: '#ffffff',
+              border: '1px solid rgba(0,0,0,0.07)',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.05)'
             }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.2)' }}>
@@ -60,8 +61,8 @@ export default function Comparison() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-white font-semibold">Traditional Hosting</h3>
-                <p className="text-[#475569] text-xs">VPS, bare metal, DIY</p>
+                <h3 className="text-slate-900 font-semibold">Traditional Hosting</h3>
+                <p className="text-slate-400 text-xs">VPS, bare metal, DIY</p>
               </div>
             </div>
 
@@ -73,7 +74,7 @@ export default function Comparison() {
                       <path d="M2 2l6 6M8 2L2 8" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </span>
-                  <span className="text-[#64748b] text-sm leading-relaxed">{item}</span>
+                  <span className="text-slate-500 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -83,9 +84,9 @@ export default function Comparison() {
           <div
             className="rounded-2xl p-8 relative overflow-hidden"
             style={{
-              background: 'rgba(10,22,40,0.9)',
+              background: 'linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%)',
               border: '1px solid rgba(59,130,246,0.25)',
-              boxShadow: '0 0 60px rgba(59,130,246,0.08), inset 0 1px 0 rgba(255,255,255,0.05)'
+              boxShadow: '0 0 40px rgba(59,130,246,0.08), 0 4px 24px rgba(0,0,0,0.06)'
             }}>
             {/* Inner glow */}
             <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent)' }} />
@@ -99,7 +100,7 @@ export default function Comparison() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-white font-semibold">Runlo</h3>
+                <h3 className="text-slate-900 font-semibold">Runlo</h3>
                 <p className="text-[#3b82f6] text-xs">Cloud deployment platform</p>
               </div>
             </div>
@@ -112,7 +113,7 @@ export default function Comparison() {
                       <path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <span className="text-[#94a3b8] text-sm leading-relaxed">{item}</span>
+                  <span className="text-slate-600 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -123,20 +124,21 @@ export default function Comparison() {
         <div
           className="mt-10 max-w-4xl mx-auto rounded-2xl p-6"
           style={{
-            background: 'rgba(10,22,40,0.5)',
-            border: '1px solid rgba(255,255,255,0.06)'
+            background: '#ffffff',
+            border: '1px solid rgba(0,0,0,0.07)',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.05)'
           }}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             {[
-              { value: '10x', label: 'Faster deployments', color: '#60a5fa' },
-              { value: '0', label: 'Servers to manage', color: '#a78bfa' },
-              { value: '100%', label: 'Automated infrastructure', color: '#34d399' }
+              { value: '10x', label: 'Faster deployments', color: '#3b82f6' },
+              { value: '0', label: 'Servers to manage', color: '#6366f1' },
+              { value: '100%', label: 'Automated infrastructure', color: '#059669' }
             ].map(({ value, label, color }) => (
               <div key={label} className="flex flex-col items-center gap-1">
                 <span className="text-3xl font-bold" style={{ color }}>
                   {value}
                 </span>
-                <span className="text-[#64748b] text-sm">{label}</span>
+                <span className="text-slate-500 text-sm">{label}</span>
               </div>
             ))}
           </div>

@@ -13,7 +13,7 @@ export default function Hero() {
           style={{
             width: '800px',
             height: '800px',
-            background: 'radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%)',
             top: '-15%',
             left: '-8%'
           }}
@@ -24,7 +24,7 @@ export default function Hero() {
           style={{
             width: '700px',
             height: '700px',
-            background: 'radial-gradient(circle, rgba(139,92,246,0.14) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(139,92,246,0.09) 0%, transparent 70%)',
             bottom: '-15%',
             right: '-8%'
           }}
@@ -35,7 +35,7 @@ export default function Hero() {
           style={{
             width: '600px',
             height: '400px',
-            background: 'radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(99,102,241,0.05) 0%, transparent 70%)',
             top: '30%',
             left: '50%',
             transform: 'translateX(-50%)'
@@ -50,7 +50,7 @@ export default function Hero() {
           {/* ── Left — copy ── */}
           <div className="flex-1 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-[#94a3b8] mb-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-slate-500 mb-8 animate-fade-in">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" style={{ boxShadow: '0 0 6px #22c55e' }} />
               Now supporting ASP.NET Core &amp; .NET Worker Services
             </div>
@@ -63,7 +63,7 @@ export default function Hero() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-[#94a3b8] leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-400">
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-400">
               Connect GitHub, select a repository, and deploy instantly. No servers, no SSH, no DevOps headaches.
             </p>
 
@@ -93,7 +93,7 @@ export default function Hero() {
               ].map(({ value, label }) => (
                 <div key={label}>
                   <div className="text-2xl font-bold gradient-text-blue">{value}</div>
-                  <div className="text-xs text-[#475569] mt-0.5">{label}</div>
+                  <div className="text-xs text-slate-400 mt-0.5">{label}</div>
                 </div>
               ))}
             </div>
@@ -120,7 +120,7 @@ export default function Hero() {
 
       {/* ── Scroll indicator ── */}
       <div className="relative z-10 pb-10 flex flex-col items-center gap-2 animate-fade-in delay-800">
-        <span className="text-[#2d3e55] text-xs tracking-widest uppercase">Scroll to explore</span>
+        <span className="text-slate-400 text-xs tracking-widest uppercase">Scroll to explore</span>
         <div className="scroll-indicator">
           <div className="scroll-dot" />
         </div>
@@ -137,7 +137,7 @@ export default function Hero() {
 function TrustedBy() {
   return (
     <div>
-      <p className="text-xs text-[#2d3e55] uppercase tracking-widest mb-4 text-center lg:text-left">Trusted by developers at</p>
+      <p className="text-xs text-slate-400 uppercase tracking-widest mb-4 text-center lg:text-left">Trusted by developers at</p>
       <div className="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
         {[
           { name: 'Acme Corp', abbr: 'acme' },
@@ -146,7 +146,7 @@ function TrustedBy() {
           { name: 'TechFlow', abbr: 'tech' },
           { name: 'NovaSaaS', abbr: 'nova' }
         ].map(({ name, abbr }) => (
-          <span key={abbr} className="text-sm font-semibold tracking-tight" style={{ color: '#1e3a5f' }}>
+          <span key={abbr} className="text-sm font-semibold tracking-tight" style={{ color: '#94a3b8' }}>
             {name}
           </span>
         ))}

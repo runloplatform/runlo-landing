@@ -22,7 +22,7 @@ export default function FinalCTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-[#94a3b8] mb-8">
+        <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-slate-500 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" style={{ boxShadow: '0 0 6px #22c55e' }} />
           Ready to deploy your first app?
         </div>
@@ -34,7 +34,7 @@ export default function FinalCTA() {
         </h2>
 
         {/* Subheadline */}
-        <p className="text-[#94a3b8] text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
+        <p className="text-slate-500 text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
           Let Runlo handle deployment and infrastructure.
           <br className="hidden sm:block" />
           Your first deployment is free — no credit card required.
@@ -54,7 +54,7 @@ export default function FinalCTA() {
         </div>
 
         {/* Trust indicators */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#334155]">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
           {['No credit card required', 'Deploy in under 5 minutes', 'Cancel anytime'].map((item) => (
             <div key={item} className="flex items-center gap-2">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">

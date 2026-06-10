@@ -8,8 +8,8 @@
 }
 
 :root {
-  --background: #050d1a;
-  --foreground: #f8fafc;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 /* ─── Keyframe Animations ─────────────────────────────── */
@@ -95,8 +95,8 @@
 
 /* ─── Base ────────────────────────────────────────────── */
 body {
-  background: #050d1a;
-  color: #f8fafc;
+  background: #f8fafc;
+  color: #0f172a;
   font-family:
     var(--font-geist-sans),
     -apple-system,
@@ -107,19 +107,19 @@ body {
 
 /* ─── Grid Background ─────────────────────────────────── */
 .grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
 /* ─── Gradient Text ───────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 20%, #cbd5e1 100%);
+  background: linear-gradient(135deg, #0f172a 20%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .gradient-text-blue {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -135,25 +135,27 @@ body {
 
 /* ─── Glass / Cards ───────────────────────────────────── */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 .glass-card {
-  background: rgba(10, 22, 40, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 20px rgba(0, 0, 0, 0.05);
   transition:
     border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+    box-shadow 0.25s ease;
 }
 .glass-card:hover {
-  background: rgba(10, 22, 40, 0.9);
+  background: #ffffff;
   border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.08);
+  box-shadow:
+    0 4px 24px rgba(59, 130, 246, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 /* ─── Buttons ─────────────────────────────────────────── */
@@ -177,9 +179,9 @@ body {
   opacity: 0.95;
 }
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f8fafc;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #0f172a;
   border-radius: 8px;
   font-weight: 500;
   display: inline-flex;
@@ -189,10 +191,11 @@ body {
   transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
 }
 
@@ -249,7 +252,7 @@ body {
   width: 22px;
   height: 36px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -292,5 +295,5 @@ body {
 /* ─── Section Divider ─────────────────────────────────── */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
 }
