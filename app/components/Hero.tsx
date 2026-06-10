@@ -2,52 +2,53 @@
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-      {/* ── Background layers ── */}
-      <div className="absolute inset-0 grid-pattern" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16">
+      {/* ── Background layers (overflow contained here) ── */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
 
-      {/* Blue orb — top-left */}
-      <div
-        className="orb animate-glow"
-        style={{
-          width: '800px',
-          height: '800px',
-          background: 'radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)',
-          top: '-15%',
-          left: '-8%'
-        }}
-      />
-      {/* Purple orb — bottom-right */}
-      <div
-        className="orb animate-glow delay-500"
-        style={{
-          width: '700px',
-          height: '700px',
-          background: 'radial-gradient(circle, rgba(139,92,246,0.14) 0%, transparent 70%)',
-          bottom: '-15%',
-          right: '-8%'
-        }}
-      />
-      {/* Subtle center orb */}
-      <div
-        className="orb animate-glow delay-300"
-        style={{
-          width: '600px',
-          height: '400px',
-          background: 'radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)',
-          top: '30%',
-          left: '50%',
-          transform: 'translateX(-50%)'
-        }}
-      />
+        {/* Blue orb — top-left */}
+        <div
+          className="orb animate-glow"
+          style={{
+            width: '800px',
+            height: '800px',
+            background: 'radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)',
+            top: '-15%',
+            left: '-8%'
+          }}
+        />
+        {/* Purple orb — bottom-right */}
+        <div
+          className="orb animate-glow delay-500"
+          style={{
+            width: '700px',
+            height: '700px',
+            background: 'radial-gradient(circle, rgba(139,92,246,0.14) 0%, transparent 70%)',
+            bottom: '-15%',
+            right: '-8%'
+          }}
+        />
+        {/* Subtle center orb */}
+        <div
+          className="orb animate-glow delay-300"
+          style={{
+            width: '600px',
+            height: '400px',
+            background: 'radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%)',
+            top: '30%',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        />
+      </div>
+      {/* end overflow-hidden bg wrapper */}
 
       {/* ── Main content ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full flex-1 flex items-center">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
-
           {/* ── Left — copy ── */}
           <div className="flex-1 text-center lg:text-left">
-
             {/* Badge */}
             <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-[#94a3b8] mb-8 animate-fade-in">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" style={{ boxShadow: '0 0 6px #22c55e' }} />
@@ -63,8 +64,7 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-[#94a3b8] leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-400">
-              Connect GitHub, select a repository, and deploy instantly.{' '}
-              No servers, no SSH, no DevOps headaches.
+              Connect GitHub, select a repository, and deploy instantly. No servers, no SSH, no DevOps headaches.
             </p>
 
             {/* CTAs */}
@@ -87,8 +87,8 @@ export default function Hero() {
             {/* Stats row */}
             <div className="flex gap-8 justify-center lg:justify-start animate-fade-in-up delay-600 mb-10">
               {[
-                { value: '500+',   label: 'Deployments' },
-                { value: '99.9%',  label: 'Uptime SLA' },
+                { value: '500+', label: 'Deployments' },
+                { value: '99.9%', label: 'Uptime SLA' },
                 { value: '< 3min', label: 'Avg. deploy time' }
               ].map(({ value, label }) => (
                 <div key={label}>
@@ -105,8 +105,10 @@ export default function Hero() {
           </div>
 
           {/* ── Right — deployment visual ── */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-[560px] animate-float animate-fade-in delay-400">
-            <DeploymentCard />
+          <div className="flex-1 w-full max-w-lg lg:max-w-[560px] animate-fade-in delay-400">
+            <div className="animate-float">
+              <DeploymentCard />
+            </div>
           </div>
         </div>
       </div>
@@ -125,10 +127,7 @@ export default function Hero() {
       </div>
 
       {/* ── Bottom gradient fade ── */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, transparent, #050d1a)' }}
-      />
+      <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent, #050d1a)' }} />
     </section>
   );
 }
@@ -138,22 +137,16 @@ export default function Hero() {
 function TrustedBy() {
   return (
     <div>
-      <p className="text-xs text-[#2d3e55] uppercase tracking-widest mb-4 text-center lg:text-left">
-        Trusted by developers at
-      </p>
+      <p className="text-xs text-[#2d3e55] uppercase tracking-widest mb-4 text-center lg:text-left">Trusted by developers at</p>
       <div className="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
         {[
-          { name: 'Acme Corp',   abbr: 'acme'   },
-          { name: 'Buildstack',  abbr: 'build'  },
-          { name: 'DataPilot',   abbr: 'data'   },
-          { name: 'TechFlow',    abbr: 'tech'   },
-          { name: 'NovaSaaS',    abbr: 'nova'   },
+          { name: 'Acme Corp', abbr: 'acme' },
+          { name: 'Buildstack', abbr: 'build' },
+          { name: 'DataPilot', abbr: 'data' },
+          { name: 'TechFlow', abbr: 'tech' },
+          { name: 'NovaSaaS', abbr: 'nova' }
         ].map(({ name, abbr }) => (
-          <span
-            key={abbr}
-            className="text-sm font-semibold tracking-tight"
-            style={{ color: '#1e3a5f' }}
-          >
+          <span key={abbr} className="text-sm font-semibold tracking-tight" style={{ color: '#1e3a5f' }}>
             {name}
           </span>
         ))}
@@ -172,13 +165,9 @@ function DeploymentCard() {
         background: 'rgba(8,18,36,0.95)',
         border: '1px solid rgba(255,255,255,0.09)',
         boxShadow: '0 0 100px rgba(59,130,246,0.14), 0 40px 80px rgba(0,0,0,0.6)'
-      }}
-    >
+      }}>
       {/* macOS title bar */}
-      <div
-        className="flex items-center gap-2 px-5 py-3"
-        style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}
-      >
+      <div className="flex items-center gap-2 px-5 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
@@ -190,49 +179,32 @@ function DeploymentCard() {
       </div>
 
       {/* Tabs */}
-      <div
-        className="flex items-center gap-0 px-4"
-        style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-      >
+      <div className="flex items-center gap-0 px-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         {[
           { label: 'Pipeline', active: true },
-          { label: 'Logs',     active: false },
-          { label: 'Metrics',  active: false },
+          { label: 'Logs', active: false },
+          { label: 'Metrics', active: false }
         ].map(({ label, active }) => (
-          <div
-            key={label}
-            className="px-4 py-2.5 text-xs font-medium relative"
-            style={{ color: active ? '#60a5fa' : '#334155', cursor: 'default' }}
-          >
+          <div key={label} className="px-4 py-2.5 text-xs font-medium relative" style={{ color: active ? '#60a5fa' : '#334155', cursor: 'default' }}>
             {label}
-            {active && (
-              <div
-                className="absolute bottom-0 left-0 right-0 h-px"
-                style={{ background: 'linear-gradient(90deg, transparent, #3b82f6, transparent)' }}
-              />
-            )}
+            {active && <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #3b82f6, transparent)' }} />}
           </div>
         ))}
       </div>
 
       {/* Pipeline content */}
       <div className="p-5 space-y-4 font-mono text-sm">
-
         {/* Source block */}
         <PipelineBlock icon={<GithubIcon />} label="Source">
-          <div
-            className="rounded-xl p-3.5"
-            style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}
-          >
+          <div className="rounded-xl p-3.5" style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}>
             <div className="flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-2">
                 <span style={{ color: '#60a5fa' }}>●</span>
-                <span className="text-xs" style={{ color: '#e2e8f0' }}>acme / my-saas-app</span>
+                <span className="text-xs" style={{ color: '#e2e8f0' }}>
+                  acme / my-saas-app
+                </span>
               </div>
-              <span
-                className="text-xs px-2 py-0.5 rounded-full"
-                style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.2)' }}
-              >
+              <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.2)' }}>
                 push detected
               </span>
             </div>
@@ -246,31 +218,21 @@ function DeploymentCard() {
 
         {/* Build steps */}
         <PipelineBlock icon={<RunloIconSmall />} label="Build">
-          <div
-            className="rounded-xl p-3.5 space-y-2.5"
-            style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}
-          >
+          <div className="rounded-xl p-3.5 space-y-2.5" style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}>
             {[
-              { dot: '✓', label: 'Clone repository',     time: '0.8s',    state: 'done'    },
-              { dot: '✓', label: 'Install dependencies', time: '14.2s',   state: 'done'    },
-              { dot: '◉', label: 'Build application',    time: 'running…', state: 'active' },
-              { dot: '○', label: 'Deploy to production', time: 'waiting', state: 'pending' },
+              { dot: '✓', label: 'Clone repository', time: '0.8s', state: 'done' },
+              { dot: '✓', label: 'Install dependencies', time: '14.2s', state: 'done' },
+              { dot: '◉', label: 'Build application', time: 'running…', state: 'active' },
+              { dot: '○', label: 'Deploy to production', time: 'waiting', state: 'pending' }
             ].map(({ dot, label, time, state }) => (
               <div key={label} className="flex items-center justify-between text-xs">
                 <div className="flex items-center gap-2.5">
-                  <span
-                    className={state === 'active' ? 'animate-blink' : ''}
-                    style={{ color: state === 'done' ? '#22c55e' : state === 'active' ? '#60a5fa' : '#2d3e55' }}
-                  >
+                  <span className={state === 'active' ? 'animate-blink' : ''} style={{ color: state === 'done' ? '#22c55e' : state === 'active' ? '#60a5fa' : '#2d3e55' }}>
                     {dot}
                   </span>
-                  <span style={{ color: state === 'done' ? '#94a3b8' : state === 'active' ? '#e2e8f0' : '#2d3e55' }}>
-                    {label}
-                  </span>
+                  <span style={{ color: state === 'done' ? '#94a3b8' : state === 'active' ? '#e2e8f0' : '#2d3e55' }}>{label}</span>
                 </div>
-                <span style={{ color: state === 'done' ? '#22c55e' : state === 'active' ? '#60a5fa' : '#2d3e55' }}>
-                  {time}
-                </span>
+                <span style={{ color: state === 'done' ? '#22c55e' : state === 'active' ? '#60a5fa' : '#2d3e55' }}>{time}</span>
               </div>
             ))}
             {/* Progress bar */}
@@ -284,22 +246,13 @@ function DeploymentCard() {
 
         {/* Production block */}
         <PipelineBlock icon={<GlobeIcon />} label="Production">
-          <div
-            className="rounded-xl p-3.5"
-            style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}
-          >
+          <div className="rounded-xl p-3.5" style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}>
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs" style={{ color: '#e2e8f0' }}>
                 https://my-saas-app.runlo.app
               </span>
-              <span
-                className="flex items-center gap-1.5 text-xs px-2 py-0.5 rounded-full"
-                style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.2)' }}
-              >
-                <span
-                  className="w-1.5 h-1.5 rounded-full bg-[#22c55e]"
-                  style={{ animation: 'blink 1.8s ease-in-out infinite' }}
-                />
+              <span className="flex items-center gap-1.5 text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.2)' }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" style={{ animation: 'blink 1.8s ease-in-out infinite' }} />
                 Live
               </span>
             </div>
@@ -318,17 +271,20 @@ function DeploymentCard() {
         style={{
           borderTop: '1px solid rgba(255,255,255,0.06)',
           background: 'rgba(255,255,255,0.018)'
-        }}
-      >
+        }}>
         {[
-          { label: 'Build time',  value: '48s',     color: '#60a5fa' },
-          { label: 'Deploys',     value: '124',     color: '#a78bfa' },
-          { label: 'Uptime',      value: '99.9%',   color: '#34d399' },
-          { label: 'Regions',     value: '3',        color: '#fb923c' },
+          { label: 'Build time', value: '48s', color: '#60a5fa' },
+          { label: 'Deploys', value: '124', color: '#a78bfa' },
+          { label: 'Uptime', value: '99.9%', color: '#34d399' },
+          { label: 'Regions', value: '3', color: '#fb923c' }
         ].map(({ label, value, color }) => (
           <div key={label} className="text-center">
-            <div className="text-xs font-semibold font-mono" style={{ color }}>{value}</div>
-            <div className="text-[10px] mt-0.5" style={{ color: '#2d3e55' }}>{label}</div>
+            <div className="text-xs font-semibold font-mono" style={{ color }}>
+              {value}
+            </div>
+            <div className="text-[10px] mt-0.5" style={{ color: '#2d3e55' }}>
+              {label}
+            </div>
           </div>
         ))}
       </div>
@@ -339,21 +295,22 @@ function DeploymentCard() {
         style={{
           borderTop: '1px solid rgba(255,255,255,0.06)',
           background: 'rgba(0,0,0,0.25)'
-        }}
-      >
+        }}>
         <div className="flex items-center gap-2 mb-2">
           <div className="flex gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-[#3b82f6]" />
             <div className="w-1.5 h-1.5 rounded-full bg-[#1d2d3e]" />
             <div className="w-1.5 h-1.5 rounded-full bg-[#1d2d3e]" />
           </div>
-          <span className="text-[10px]" style={{ color: '#2d3e55' }}>deployment logs</span>
+          <span className="text-[10px]" style={{ color: '#2d3e55' }}>
+            deployment logs
+          </span>
         </div>
         {[
-          { prefix: '$',    text: 'dotnet publish -c Release',          color: '#60a5fa' },
-          { prefix: '›',    text: 'Build succeeded. (12.4s)',           color: '#22c55e' },
-          { prefix: '›',    text: 'Uploading artifact… 100%',           color: '#94a3b8' },
-          { prefix: '›',    text: 'Container ready. Routing traffic ✓', color: '#34d399' },
+          { prefix: '$', text: 'dotnet publish -c Release', color: '#60a5fa' },
+          { prefix: '›', text: 'Build succeeded. (12.4s)', color: '#22c55e' },
+          { prefix: '›', text: 'Uploading artifact… 100%', color: '#94a3b8' },
+          { prefix: '›', text: 'Container ready. Routing traffic ✓', color: '#34d399' }
         ].map(({ prefix, text, color }, i) => (
           <div key={i} className="flex items-start gap-2 text-[11px] leading-5">
             <span style={{ color: '#2d3e55' }}>{prefix}</span>
@@ -363,7 +320,9 @@ function DeploymentCard() {
         {/* Blinking cursor */}
         <div className="flex items-center gap-2 text-[11px] mt-0.5">
           <span style={{ color: '#2d3e55' }}>$</span>
-          <span className="animate-blink" style={{ color: '#3b82f6' }}>█</span>
+          <span className="animate-blink" style={{ color: '#3b82f6' }}>
+            █
+          </span>
         </div>
       </div>
     </div>
@@ -372,15 +331,7 @@ function DeploymentCard() {
 
 // ─── Sub-components ────────────────────────────────────────────────────────
 
-function PipelineBlock({
-  icon,
-  label,
-  children,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  children: React.ReactNode;
-}) {
+function PipelineBlock({ icon, label, children }: { icon: React.ReactNode; label: string; children: React.ReactNode }) {
   return (
     <div>
       <div className="flex items-center gap-2 mb-2.5">
@@ -397,17 +348,11 @@ function PipelineBlock({
 function Connector() {
   return (
     <div className="flex items-center gap-3 py-0.5">
-      <div
-        className="flex-1 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)' }}
-      />
+      <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)' }} />
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
         <path d="M8 2v12M2 8l6 6 6-6" stroke="#3b82f6" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <div
-        className="flex-1 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)' }}
-      />
+      <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)' }} />
     </div>
   );
 }
